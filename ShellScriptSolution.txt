@@ -1,0 +1,18 @@
+~# cat sample.csv
+Atlanta, Ga.
+Atlantic City, N.J.
+Austin, Texas
+Baltimore, Md.
+Baton Rouge, La.
+Billings, Mont.
+Birmingham, Ala.
+Bismarck, N.D.
+Boise, Idaho
+Boston, Mass.
+Bridgeport, Conn.
+
+~# cat execute.sh
+cat ./sample.csv | while read LINE ; do  echo $LINE | cut -d ',' -f1 ; done | paste -s -d ";" > ./output.csv
+
+~# cat output.csv
+Atlanta;Atlantic City;Austin;Baltimore;Baton Rouge;Billings;Birmingham;Bismarck;Boise;Boston;Bridgeport
